@@ -114,6 +114,7 @@
             this.btnRefresh.TabIndex = 15;
             this.btnRefresh.Text = "REFRESH";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // FormAdminViewRecords
             // 
