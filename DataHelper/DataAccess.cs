@@ -104,5 +104,41 @@ namespace DataHelper
             }
 
         }
+
+        public static bool AddEquipment(string equipmentID, string name, int quantity, string description)
+        {
+            bool success = false;
+
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                sqlCon.Open();
+                SqlCommand addEquipmentCmd = new SqlCommand("Admin_AddEquipment", sqlCon);
+                addEquipmentCmd.CommandType = CommandType.StoredProcedure;
+
+                addEquipmentCmd.Parameters.AddWithValue("@EquipmentID", equipmentID);
+                addEquipmentCmd.Parameters.AddWithValue("@Name", name);
+                addEquipmentCmd.Parameters.AddWithValue("@Quantity", quantity);
+                addEquipmentCmd.Parameters.AddWithValue("@Description", description);
+
+                int rowsAffected = addEquipmentCmd.ExecuteNonQuery();
+                success = rowsAffected > 0;
+            }
+
+            return success;
+        }
+
+        public static DataTable ViewEquipment()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Admin_ViewEquipment", sqlCon);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
     }
 }
