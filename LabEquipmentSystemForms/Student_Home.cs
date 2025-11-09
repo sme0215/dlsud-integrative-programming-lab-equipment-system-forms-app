@@ -12,9 +12,13 @@ namespace LabEquipmentSystemForms
 {
     public partial class FormStudentHome : Form
     {
-        public FormStudentHome()
+        string studentID;
+
+        public FormStudentHome(string studentID)
         {
             InitializeComponent();
+
+            this.studentID = studentID;
         }
     }
 }
