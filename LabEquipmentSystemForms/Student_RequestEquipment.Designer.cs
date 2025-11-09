@@ -1,6 +1,6 @@
 ﻿namespace LabEquipmentSystemForms
 {
-    partial class FormStudentEquipmentRequests
+    partial class FormStudentRequestEquipment
     {
         /// <summary>
         /// Required designer variable.
@@ -134,13 +134,13 @@
             this.dataGridView.TabIndex = 10;
             this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
-            // FormStudentEquipmentRequests
+            // FormStudentRequestEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormStudentEquipmentRequests";
+            this.Name = "FormStudentRequestEquipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Equipment";
             this.Load += new System.EventHandler(this.FormStudentEquipmentRequests_Load);

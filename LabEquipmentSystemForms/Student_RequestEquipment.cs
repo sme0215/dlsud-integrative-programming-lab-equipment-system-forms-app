@@ -12,12 +12,12 @@ using System.Xml.Linq;
 
 namespace LabEquipmentSystemForms
 {
-    public partial class FormStudentEquipmentRequests : Form
+    public partial class FormStudentRequestEquipment : Form
     {
         string studentID;
         BindingSource bs = new BindingSource();
 
-        public FormStudentEquipmentRequests(string studentID)
+        public FormStudentRequestEquipment(string studentID)
         {
             InitializeComponent();
 
