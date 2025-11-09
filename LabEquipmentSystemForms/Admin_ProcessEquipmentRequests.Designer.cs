@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblEquipmentID = new System.Windows.Forms.Label();
-            this.txtEquipmentId = new System.Windows.Forms.TextBox();
-            this.lblStudentID = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnApprove = new System.Windows.Forms.Button();
             this.btnDeny = new System.Windows.Forms.Button();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.txtEquipmentID = new System.Windows.Forms.TextBox();
+            this.lblEquipmentID = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblQuantity, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtStudentID, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblStudentID, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtEquipmentId, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtEquipmentID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblEquipmentID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -69,77 +69,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 461);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lblEquipmentID
-            // 
-            this.lblEquipmentID.AutoSize = true;
-            this.lblEquipmentID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEquipmentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipmentID.Location = new System.Drawing.Point(3, 0);
-            this.lblEquipmentID.Name = "lblEquipmentID";
-            this.lblEquipmentID.Size = new System.Drawing.Size(215, 46);
-            this.lblEquipmentID.TabIndex = 1;
-            this.lblEquipmentID.Text = "EQUIPMENT ID";
-            this.lblEquipmentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtEquipmentId
-            // 
-            this.txtEquipmentId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEquipmentId.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquipmentId.Location = new System.Drawing.Point(224, 3);
-            this.txtEquipmentId.Name = "txtEquipmentId";
-            this.txtEquipmentId.ReadOnly = true;
-            this.txtEquipmentId.Size = new System.Drawing.Size(657, 43);
-            this.txtEquipmentId.TabIndex = 2;
-            // 
-            // lblStudentID
-            // 
-            this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStudentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentID.Location = new System.Drawing.Point(3, 46);
-            this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(215, 46);
-            this.lblStudentID.TabIndex = 3;
-            this.lblStudentID.Text = "STUDENT ID";
-            this.lblStudentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentID.Location = new System.Drawing.Point(224, 49);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.ReadOnly = true;
-            this.txtStudentID.Size = new System.Drawing.Size(657, 43);
-            this.txtStudentID.TabIndex = 4;
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(3, 92);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(215, 46);
-            this.lblQuantity.TabIndex = 5;
-            this.lblQuantity.Text = "QUANTITY";
-            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nudQuantity
-            // 
-            this.nudQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudQuantity.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.nudQuantity.Location = new System.Drawing.Point(224, 95);
-            this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.ReadOnly = true;
-            this.nudQuantity.Size = new System.Drawing.Size(657, 43);
-            this.nudQuantity.TabIndex = 7;
-            this.nudQuantity.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             // 
             // flowLayoutPanel2
             // 
@@ -162,6 +91,7 @@
             this.btnApprove.TabIndex = 5;
             this.btnApprove.Text = "APPROVE";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnDeny
             // 
@@ -174,6 +104,78 @@
             this.btnDeny.TabIndex = 6;
             this.btnDeny.Text = "DENY";
             this.btnDeny.UseVisualStyleBackColor = true;
+            this.btnDeny.Click += new System.EventHandler(this.btnDeny_Click);
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudQuantity.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.nudQuantity.Location = new System.Drawing.Point(224, 95);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.ReadOnly = true;
+            this.nudQuantity.Size = new System.Drawing.Size(657, 43);
+            this.nudQuantity.TabIndex = 7;
+            this.nudQuantity.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(3, 92);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(215, 46);
+            this.lblQuantity.TabIndex = 5;
+            this.lblQuantity.Text = "QUANTITY";
+            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentID.Location = new System.Drawing.Point(224, 49);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.ReadOnly = true;
+            this.txtStudentID.Size = new System.Drawing.Size(657, 43);
+            this.txtStudentID.TabIndex = 4;
+            // 
+            // lblStudentID
+            // 
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStudentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentID.Location = new System.Drawing.Point(3, 46);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(215, 46);
+            this.lblStudentID.TabIndex = 3;
+            this.lblStudentID.Text = "STUDENT ID";
+            this.lblStudentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtEquipmentID
+            // 
+            this.txtEquipmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEquipmentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquipmentID.Location = new System.Drawing.Point(224, 3);
+            this.txtEquipmentID.Name = "txtEquipmentID";
+            this.txtEquipmentID.ReadOnly = true;
+            this.txtEquipmentID.Size = new System.Drawing.Size(657, 43);
+            this.txtEquipmentID.TabIndex = 2;
+            // 
+            // lblEquipmentID
+            // 
+            this.lblEquipmentID.AutoSize = true;
+            this.lblEquipmentID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEquipmentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipmentID.Location = new System.Drawing.Point(3, 0);
+            this.lblEquipmentID.Name = "lblEquipmentID";
+            this.lblEquipmentID.Size = new System.Drawing.Size(215, 46);
+            this.lblEquipmentID.TabIndex = 1;
+            this.lblEquipmentID.Text = "EQUIPMENT ID";
+            this.lblEquipmentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView
             // 
@@ -185,6 +187,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(878, 271);
             this.dataGridView.TabIndex = 10;
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // FormAdminProcessEquipmentRequests
             // 
@@ -197,9 +200,9 @@
             this.Text = "Process Requests";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -212,7 +215,7 @@
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.TextBox txtStudentID;
         private System.Windows.Forms.Label lblStudentID;
-        private System.Windows.Forms.TextBox txtEquipmentId;
+        private System.Windows.Forms.TextBox txtEquipmentID;
         private System.Windows.Forms.NumericUpDown nudQuantity;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button btnApprove;
