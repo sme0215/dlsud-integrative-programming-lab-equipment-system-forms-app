@@ -70,6 +70,8 @@ namespace DataHelper
         /* ===========================
          *       ADMIN METHODS
          * =========================== */
+
+        // Students
         public static bool AddStudent(string studentID, string password, byte[] profilePicture, string firstName, string lastName, string gender, string course)
         {
             bool success = false;
@@ -113,6 +115,7 @@ namespace DataHelper
 
         }
 
+        // Equipment
         public static bool AddEquipment(string equipmentID, string name, int quantity, string description)
         {
             bool success = false;
@@ -173,6 +176,50 @@ namespace DataHelper
                 editEquipmentCmd.Parameters.AddWithValue("@NewDescription", newDescription);
 
                 int rowsAffected = editEquipmentCmd.ExecuteNonQuery();
+                success = rowsAffected > 0;
+            }
+
+            return success;
+        }
+
+        // Requests
+        public static bool ApproveEquipmentRequest(string requestID, string adminID, DateTime dateTimeBorrowed)
+        {
+            bool success = false;
+
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                sqlCon.Open();
+
+                SqlCommand approveRequestCmd = new SqlCommand("Admin_ApproveEquipmentRequest", sqlCon);
+                approveRequestCmd.CommandType = CommandType.StoredProcedure;
+
+                approveRequestCmd.Parameters.AddWithValue("@RequestID", requestID);
+                approveRequestCmd.Parameters.AddWithValue("@AdminID", adminID);
+                approveRequestCmd.Parameters.AddWithValue("@DateTimeBorrowed", dateTimeBorrowed);
+
+                int rowsAffected = approveRequestCmd.ExecuteNonQuery();
+                success = rowsAffected > 0;
+            }
+
+            return success;
+        }
+
+        public static bool DenyEquipmentRequest(string requestID, string adminID)
+        {
+            bool success = false;
+
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                sqlCon.Open();
+
+                SqlCommand denyRequestCmd = new SqlCommand("Admin_DenyEquipmentRequest", sqlCon);
+                denyRequestCmd.CommandType = CommandType.StoredProcedure;
+
+                denyRequestCmd.Parameters.AddWithValue("@RequestID", requestID);
+                denyRequestCmd.Parameters.AddWithValue("@AdminID", adminID);
+
+                int rowsAffected = denyRequestCmd.ExecuteNonQuery();
                 success = rowsAffected > 0;
             }
 
