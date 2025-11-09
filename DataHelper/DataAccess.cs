@@ -12,7 +12,11 @@ namespace DataHelper
     {
         public static string conStr = $@"";
 
-        // Login methods
+
+
+        /* ===========================
+         *       LOGIN METHODS
+         * =========================== */
         public static bool LoginAdmin (string adminID, string password)
         {
             bool success = false;
@@ -61,7 +65,11 @@ namespace DataHelper
             return success;
         }
 
-        // Admin methods
+
+
+        /* ===========================
+         *       ADMIN METHODS
+         * =========================== */
         public static bool AddStudent(string studentID, string password, byte[] profilePicture, string firstName, string lastName, string gender, string course)
         {
             bool success = false;
@@ -171,8 +179,11 @@ namespace DataHelper
             return success;
         }
 
-        // Student methods
 
+
+        /* ===========================
+         *       STUDENT METHODS
+         * =========================== */
         public static bool RequestEquipment(string studentID, string equipmentID, int quantity, DateTime requestDate, string status)
         {
             bool success = false;
@@ -196,5 +207,7 @@ namespace DataHelper
 
             return success;
         }
+
+
     }
 }
