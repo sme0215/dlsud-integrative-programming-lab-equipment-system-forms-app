@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DataHelper
@@ -269,6 +270,21 @@ namespace DataHelper
             return success;
         }
 
+        public static DataTable ViewMyEquipmentRequests(string studentID, string status)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Student_ViewMyEquipmentRequests", sqlCon);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
+                da.SelectCommand.Parameters.AddWithValue("@StudentID", studentID);
+                da.SelectCommand.Parameters.AddWithValue("@Status", status);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
     }
 }
