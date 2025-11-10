@@ -225,12 +225,14 @@ namespace DataHelper
             return success;
         }
 
-        public static DataTable ViewPendingEquipmentRequests()
+        public static DataTable ViewEquipmentRequests(string status)
         {
             using (SqlConnection sqlCon = new SqlConnection(conStr))
             {
-                SqlDataAdapter da = new SqlDataAdapter("Admin_ViewPendingEquipmentRequests", sqlCon);
+                SqlDataAdapter da = new SqlDataAdapter("Admin_ViewEquipmentRequests", sqlCon);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                da.SelectCommand.Parameters.AddWithValue("@Status", status);
 
                 DataTable dt = new DataTable();
                 da.Fill(dt);

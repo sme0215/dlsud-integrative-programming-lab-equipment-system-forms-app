@@ -68,7 +68,7 @@ namespace LabEquipmentSystemForms
 
         private void LoadEquipmentRequestsRecords()
         {
-            DataTable dt = DataAccess.ViewPendingEquipmentRequests();
+            DataTable dt = DataAccess.ViewEquipmentRequests();
             bs.DataSource = dt;
             dataGridView.DataSource = bs;
         }
