@@ -39,25 +39,35 @@
             this.txtEquipmentID = new System.Windows.Forms.TextBox();
             this.lblEquipmentID = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnFilterAll = new System.Windows.Forms.Button();
+            this.btnFilterPending = new System.Windows.Forms.Button();
+            this.btnFilterApproved = new System.Windows.Forms.Button();
+            this.btnFilterDenied = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.nudQuantity, 1, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblFilter, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblQuantity, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtStudentID, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblStudentID, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEquipmentID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblEquipmentID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.nudQuantity, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -75,19 +85,19 @@
             this.flowLayoutPanel2.Controls.Add(this.btnApprove);
             this.flowLayoutPanel2.Controls.Add(this.btnDeny);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(224, 141);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(666, 141);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(657, 40);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(215, 40);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
             // btnApprove
             // 
             this.btnApprove.AutoSize = true;
             this.btnApprove.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnApprove.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApprove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApprove.Location = new System.Drawing.Point(3, 3);
             this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(144, 39);
+            this.btnApprove.Size = new System.Drawing.Size(100, 30);
             this.btnApprove.TabIndex = 5;
             this.btnApprove.Text = "APPROVE";
             this.btnApprove.UseVisualStyleBackColor = true;
@@ -97,10 +107,10 @@
             // 
             this.btnDeny.AutoSize = true;
             this.btnDeny.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnDeny.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeny.Location = new System.Drawing.Point(153, 3);
+            this.btnDeny.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeny.Location = new System.Drawing.Point(109, 3);
             this.btnDeny.Name = "btnDeny";
-            this.btnDeny.Size = new System.Drawing.Size(100, 39);
+            this.btnDeny.Size = new System.Drawing.Size(100, 30);
             this.btnDeny.TabIndex = 6;
             this.btnDeny.Text = "DENY";
             this.btnDeny.UseVisualStyleBackColor = true;
@@ -109,6 +119,7 @@
             // nudQuantity
             // 
             this.nudQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.nudQuantity, 2);
             this.nudQuantity.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.nudQuantity.Location = new System.Drawing.Point(224, 95);
             this.nudQuantity.Name = "nudQuantity";
@@ -131,11 +142,12 @@
             this.lblQuantity.Size = new System.Drawing.Size(215, 46);
             this.lblQuantity.TabIndex = 5;
             this.lblQuantity.Text = "QUANTITY";
-            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtStudentID
             // 
             this.txtStudentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.txtStudentID, 2);
             this.txtStudentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentID.Location = new System.Drawing.Point(224, 49);
             this.txtStudentID.Name = "txtStudentID";
@@ -153,11 +165,12 @@
             this.lblStudentID.Size = new System.Drawing.Size(215, 46);
             this.lblStudentID.TabIndex = 3;
             this.lblStudentID.Text = "STUDENT ID";
-            this.lblStudentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStudentID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtEquipmentID
             // 
             this.txtEquipmentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.txtEquipmentID, 2);
             this.txtEquipmentID.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEquipmentID.Location = new System.Drawing.Point(224, 3);
             this.txtEquipmentID.Name = "txtEquipmentID";
@@ -175,19 +188,96 @@
             this.lblEquipmentID.Size = new System.Drawing.Size(215, 46);
             this.lblEquipmentID.TabIndex = 1;
             this.lblEquipmentID.Text = "EQUIPMENT ID";
-            this.lblEquipmentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEquipmentID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dataGridView
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView, 3);
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(3, 187);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(878, 271);
             this.dataGridView.TabIndex = 10;
             this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFilter.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.Location = new System.Drawing.Point(3, 138);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(215, 46);
+            this.lblFilter.TabIndex = 11;
+            this.lblFilter.Text = "FILTER BY";
+            this.lblFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnFilterAll);
+            this.flowLayoutPanel1.Controls.Add(this.btnFilterPending);
+            this.flowLayoutPanel1.Controls.Add(this.btnFilterApproved);
+            this.flowLayoutPanel1.Controls.Add(this.btnFilterDenied);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(224, 141);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 40);
+            this.flowLayoutPanel1.TabIndex = 12;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // btnFilterAll
+            // 
+            this.btnFilterAll.AutoSize = true;
+            this.btnFilterAll.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFilterAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterAll.Location = new System.Drawing.Point(3, 3);
+            this.btnFilterAll.Name = "btnFilterAll";
+            this.btnFilterAll.Size = new System.Drawing.Size(100, 30);
+            this.btnFilterAll.TabIndex = 5;
+            this.btnFilterAll.Text = "ALL";
+            this.btnFilterAll.UseVisualStyleBackColor = true;
+            this.btnFilterAll.Click += new System.EventHandler(this.btnFilterAll_Click);
+            // 
+            // btnFilterPending
+            // 
+            this.btnFilterPending.AutoSize = true;
+            this.btnFilterPending.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFilterPending.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterPending.Location = new System.Drawing.Point(109, 3);
+            this.btnFilterPending.Name = "btnFilterPending";
+            this.btnFilterPending.Size = new System.Drawing.Size(100, 30);
+            this.btnFilterPending.TabIndex = 6;
+            this.btnFilterPending.Text = "PENDING";
+            this.btnFilterPending.UseVisualStyleBackColor = true;
+            this.btnFilterPending.Click += new System.EventHandler(this.btnFilterPending_Click);
+            // 
+            // btnFilterApproved
+            // 
+            this.btnFilterApproved.AutoSize = true;
+            this.btnFilterApproved.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFilterApproved.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterApproved.Location = new System.Drawing.Point(215, 3);
+            this.btnFilterApproved.Name = "btnFilterApproved";
+            this.btnFilterApproved.Size = new System.Drawing.Size(109, 30);
+            this.btnFilterApproved.TabIndex = 7;
+            this.btnFilterApproved.Text = "APPROVED";
+            this.btnFilterApproved.UseVisualStyleBackColor = true;
+            this.btnFilterApproved.Click += new System.EventHandler(this.btnFilterApproved_Click);
+            // 
+            // btnFilterDenied
+            // 
+            this.btnFilterDenied.AutoSize = true;
+            this.btnFilterDenied.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFilterDenied.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterDenied.Location = new System.Drawing.Point(330, 3);
+            this.btnFilterDenied.Name = "btnFilterDenied";
+            this.btnFilterDenied.Size = new System.Drawing.Size(100, 30);
+            this.btnFilterDenied.TabIndex = 8;
+            this.btnFilterDenied.Text = "DENIED";
+            this.btnFilterDenied.UseVisualStyleBackColor = true;
+            this.btnFilterDenied.Click += new System.EventHandler(this.btnFilterDenied_Click);
             // 
             // FormAdminProcessEquipmentRequests
             // 
@@ -204,6 +294,8 @@
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +313,11 @@
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnDeny;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnFilterAll;
+        private System.Windows.Forms.Button btnFilterPending;
+        private System.Windows.Forms.Button btnFilterApproved;
+        private System.Windows.Forms.Button btnFilterDenied;
+        private System.Windows.Forms.Label lblFilter;
     }
 }
