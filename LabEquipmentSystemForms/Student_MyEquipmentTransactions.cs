@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataHelper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,19 +12,19 @@ using DataHelper;
 
 namespace LabEquipmentSystemForms
 {
-    public partial class FormStudentMyEquipmentRequests : Form
+    public partial class FormStudentMyEquipmentTransactions : Form
     {
         private string studentID;
         private string currentStatus = "";
         private BindingSource bs = new BindingSource();
 
-        public FormStudentMyEquipmentRequests(string studentID)
+        public FormStudentMyEquipmentTransactions(string studentID)
         {
             InitializeComponent();
-            LoadMyEquipmentRequests();
 
             this.studentID = studentID;
         }
+
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -31,15 +32,15 @@ namespace LabEquipmentSystemForms
 
             currentStatus = (selected == "All") ? "" : selected;
 
-            LoadMyEquipmentRequests();
+            LoadMyEquipmentTransactions();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadMyEquipmentRequests();
+            LoadMyEquipmentTransactions();
         }
 
-        private void btnBorrow_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
             // Check if row is selected
             if (dataGridView.CurrentRow == null) return;
@@ -48,9 +49,9 @@ namespace LabEquipmentSystemForms
             string status = dataGridView.CurrentRow.Cells["Status"].Value.ToString().ToLower();
 
             // Check Status field
-            if (status.Equals("approved"))
+            if (status.Equals("borrowed"))
             {
-                // If approved, execute BorrowEquipment method
+                // If borrowed, execute ReturnEquipment method
                 string requestID = dataGridView.CurrentRow.Cells["RequestID"].Value.ToString();
                 DateTime dateTimeBorrowed = DateTime.Now;
 
@@ -60,21 +61,21 @@ namespace LabEquipmentSystemForms
                     dateTimeBorrowed
                 );
 
-                MessageBox.Show("Equipment borrowed successfully. View in Equipment > Transactions > View My Transactions.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Equipment returned successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                // Else show MessageBox indicating cannot borrow
-                MessageBox.Show("Only approved requests can be borrowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Else show MessageBox indicating cannot return
+                MessageBox.Show("Only borrowed requests can be returned.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
-        private void LoadMyEquipmentRequests()
+        private void LoadMyEquipmentTransactions()
         {
             dataGridView.DataSource = null;
-            DataTable dt = DataAccess.ViewMyEquipmentRequests(studentID, currentStatus);
+            DataTable dt = DataAccess.ViewMyEquipmentTransactions(studentID, currentStatus);
             bs.DataSource = dt;
             dataGridView.DataSource = bs;
         }

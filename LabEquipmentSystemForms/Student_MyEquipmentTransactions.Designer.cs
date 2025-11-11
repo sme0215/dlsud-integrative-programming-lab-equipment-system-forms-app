@@ -1,6 +1,6 @@
 ﻿namespace LabEquipmentSystemForms
 {
-    partial class FormStudentMyEquipmentRequests
+    partial class FormStudentMyEquipmentTransactions
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnBorrow = new System.Windows.Forms.Button();
-            this.lblFilter = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.lblFilter = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -44,7 +44,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.cbFilter);
             this.flowLayoutPanel1.Controls.Add(this.btnRefresh);
-            this.flowLayoutPanel1.Controls.Add(this.btnBorrow);
+            this.flowLayoutPanel1.Controls.Add(this.btnReturn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(224, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -59,9 +59,9 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "All",
-            "Pending",
-            "Approved",
-            "Denied"});
+            "Borrowed",
+            "Returned",
+            "Lost"});
             this.cbFilter.Location = new System.Drawing.Point(3, 3);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 3, 50, 3);
             this.cbFilter.Name = "cbFilter";
@@ -83,19 +83,30 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnBorrow
+            // btnReturn
             // 
-            this.btnBorrow.AutoSize = true;
-            this.btnBorrow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBorrow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(383, 3);
-            this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(202, 34);
-            this.btnBorrow.TabIndex = 17;
-            this.btnBorrow.Text = "BORROW SELECTED";
-            this.btnBorrow.UseVisualStyleBackColor = true;
-            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            this.btnReturn.AutoSize = true;
+            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Location = new System.Drawing.Point(383, 3);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(202, 34);
+            this.btnReturn.TabIndex = 17;
+            this.btnReturn.Text = "RETURN SELECTED";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView, 2);
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(3, 49);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(878, 409);
+            this.dataGridView.TabIndex = 10;
             // 
             // lblFilter
             // 
@@ -108,17 +119,6 @@
             this.lblFilter.TabIndex = 11;
             this.lblFilter.Text = "FILTER BY";
             this.lblFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView, 2);
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(3, 49);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(878, 409);
-            this.dataGridView.TabIndex = 10;
             // 
             // tableLayoutPanel1
             // 
@@ -135,16 +135,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 461);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // FormStudentMyEquipmentRequests
+            // FormStudentMyEquipmentTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormStudentMyEquipmentRequests";
-            this.Text = "My Equipment Requests";
+            this.Name = "FormStudentMyEquipmentTransactions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "My Equipment Transactions";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -157,11 +158,11 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label lblFilter;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblFilter;
     }
 }
