@@ -31,10 +31,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnBorrow = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnBorrow = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -83,6 +83,20 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnBorrow
+            // 
+            this.btnBorrow.AutoSize = true;
+            this.btnBorrow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBorrow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrow.Location = new System.Drawing.Point(383, 3);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(202, 34);
+            this.btnBorrow.TabIndex = 17;
+            this.btnBorrow.Text = "BORROW SELECTED";
+            this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
             // lblFilter
             // 
             this.lblFilter.AutoSize = true;
@@ -122,20 +136,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 461);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // btnBorrow
-            // 
-            this.btnBorrow.AutoSize = true;
-            this.btnBorrow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBorrow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(383, 3);
-            this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(202, 34);
-            this.btnBorrow.TabIndex = 17;
-            this.btnBorrow.Text = "BORROW SELECTED";
-            this.btnBorrow.UseVisualStyleBackColor = true;
-            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
             // FormStudentMyEquipmentRequests
             // 

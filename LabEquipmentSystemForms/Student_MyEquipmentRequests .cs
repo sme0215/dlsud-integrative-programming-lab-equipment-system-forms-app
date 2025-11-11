@@ -39,14 +39,6 @@ namespace LabEquipmentSystemForms
             LoadMyEquipmentRequests();
         }
 
-        private void LoadMyEquipmentRequests()
-        {
-            dataGridView.DataSource = null;
-            DataTable dt = DataAccess.ViewMyEquipmentRequests(studentID, currentStatus);
-            bs.DataSource = dt;
-            dataGridView.DataSource = bs;
-        }
-
         private void btnBorrow_Click(object sender, EventArgs e)
         {
             // Check if row is selected
@@ -77,6 +69,14 @@ namespace LabEquipmentSystemForms
                 MessageBox.Show("Only approved requests can be borrowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void LoadMyEquipmentRequests()
+        {
+            dataGridView.DataSource = null;
+            DataTable dt = DataAccess.ViewMyEquipmentRequests(studentID, currentStatus);
+            bs.DataSource = dt;
+            dataGridView.DataSource = bs;
         }
     }
 }
