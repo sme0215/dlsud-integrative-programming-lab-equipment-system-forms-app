@@ -203,6 +203,18 @@ namespace DataHelper
             }
         }
 
+        public static DataTable ViewEquipmentTransactions()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Admin_ViewEquipmentTransactions", sqlCon);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
 
         /* ===========================
          *       STUDENT METHODS
