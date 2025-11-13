@@ -20,9 +20,9 @@ namespace LabEquipmentSystemForms
         public FormStudentMyEquipmentRequests(string studentID)
         {
             InitializeComponent();
-            LoadMyEquipmentRequests();
 
             this.studentID = studentID;
+            LoadMyEquipmentRequests();
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
