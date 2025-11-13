@@ -36,9 +36,21 @@ namespace LabEquipmentSystemForms
             timeMenuItem.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
+
+        private void viewMyRequestsMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStudentMyEquipmentRequests myRequestsForm = new FormStudentMyEquipmentRequests(studentID);
+            MDIHelper.LoadChildForm(myRequestsForm, this);
+        }
+        private void viewMyTransactionsMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStudentMyEquipmentTransactions myTransactionsForm = new FormStudentMyEquipmentTransactions(studentID);
+            MDIHelper.LoadChildForm(myTransactionsForm, this);
+        }
         private void logoutMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

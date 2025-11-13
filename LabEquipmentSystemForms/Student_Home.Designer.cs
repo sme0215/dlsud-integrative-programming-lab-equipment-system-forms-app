@@ -39,8 +39,8 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.welcomeMessageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.logoutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.equipmentMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 24);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(83, 537);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 537);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,7 +62,7 @@
             this.requestsMenuItem,
             this.transactionsMenuItem});
             this.equipmentMenuItem.Name = "equipmentMenuItem";
-            this.equipmentMenuItem.Size = new System.Drawing.Size(70, 19);
+            this.equipmentMenuItem.Size = new System.Drawing.Size(113, 19);
             this.equipmentMenuItem.Text = "Equipment";
             // 
             // requestsMenuItem
@@ -86,6 +86,7 @@
             this.viewMyRequestsMenuItem.Name = "viewMyRequestsMenuItem";
             this.viewMyRequestsMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewMyRequestsMenuItem.Text = "View My Requests";
+            this.viewMyRequestsMenuItem.Click += new System.EventHandler(this.viewMyRequestsMenuItem_Click);
             // 
             // transactionsMenuItem
             // 
@@ -100,6 +101,7 @@
             this.viewMyTransactionsMenuItem.Name = "viewMyTransactionsMenuItem";
             this.viewMyTransactionsMenuItem.Size = new System.Drawing.Size(187, 22);
             this.viewMyTransactionsMenuItem.Text = "View My Transactions";
+            this.viewMyTransactionsMenuItem.Click += new System.EventHandler(this.viewMyTransactionsMenuItem_Click);
             // 
             // menuStrip2
             // 
@@ -125,12 +127,6 @@
             this.timeMenuItem.Size = new System.Drawing.Size(51, 20);
             this.timeMenuItem.Text = "[time]";
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // logoutMenuItem
             // 
             this.logoutMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -141,6 +137,12 @@
             this.logoutMenuItem.Size = new System.Drawing.Size(68, 20);
             this.logoutMenuItem.Text = "LOGOUT";
             this.logoutMenuItem.Click += new System.EventHandler(this.logoutMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormStudentHome
             // 
