@@ -19,6 +19,7 @@ namespace LabEquipmentSystemForms
             InitializeComponent();
 
             this.adminID = adminID;
+            welcomeMessageMenuItem.Text = "Welcome, " + adminID;
         }
 
         private void addNewStudentMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +56,31 @@ namespace LabEquipmentSystemForms
         {
             FormAdminViewRecords formAdminViewRecords = new FormAdminViewRecords("Transactions");
             FormHelper.MDIHelper.LoadChildForm(formAdminViewRecords, this);
+        }
+
+        private void processRequestsMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdminProcessEquipmentRequests formAdminProcessEquipmentRequests = new FormAdminProcessEquipmentRequests(adminID);
+            FormHelper.MDIHelper.LoadChildForm(formAdminProcessEquipmentRequests, this);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timeMenuItem.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void logoutMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (response == DialogResult.Yes)
+            {
+                MessageBox.Show("You have been logged out.", "Logged Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Logout cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

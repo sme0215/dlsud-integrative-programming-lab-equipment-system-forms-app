@@ -11,7 +11,7 @@ namespace DataHelper
 {
     public class DataAccess
     {
-        public static string conStr = $@"";
+        public static string conStr = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Matthew\source\repos\BIT34_StaAna_IntegProg_LabEquipmentSystem\LabEquipmentSystemForms\MasterDB.mdf;Integrated Security=True";
 
 
 
@@ -57,6 +57,23 @@ namespace DataHelper
             return success;
         }
 
+        public static string GetStudentFullName(string studentID)
+        {
+            string fullName = "";
+            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            {
+                sqlCon.Open();
+                SqlCommand getNameCmd = new SqlCommand("Student_GetNameById", sqlCon);
+                getNameCmd.CommandType = CommandType.StoredProcedure;
+                getNameCmd.Parameters.AddWithValue("@StudentID", studentID);
+                object result = getNameCmd.ExecuteScalar();
+                if (result != null)
+                {
+                    fullName = result.ToString();
+                }
+            }
+            return fullName.Trim();
+        }
 
 
         /* ===========================
