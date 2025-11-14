@@ -53,15 +53,16 @@ namespace LabEquipmentSystemForms
             {
                 // If borrowed, execute ReturnEquipment method
                 string requestID = dataGridView.CurrentRow.Cells["RequestID"].Value.ToString();
-                DateTime dateTimeBorrowed = DateTime.Now;
+                DateTime dateTimeReturned = DateTime.Now;
 
-                bool success = DataAccess.BorrowEquipment(
+                bool success = DataAccess.ReturnEquipment(
                     requestID,
                     studentID,
-                    dateTimeBorrowed
+                    dateTimeReturned
                 );
 
                 MessageBox.Show("Equipment returned successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadMyEquipmentTransactions();
                 return;
             }
             else

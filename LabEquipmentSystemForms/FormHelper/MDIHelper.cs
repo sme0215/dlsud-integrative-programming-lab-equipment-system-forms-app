@@ -26,6 +26,9 @@ namespace LabEquipmentSystemForms.FormHelper
 
             // If the form is not open, set it as a child of the parent form and show it
             newChildForm.MdiParent = parentForm;
+            newChildForm.WindowState = FormWindowState.Maximized;
+            // Configure properties to disable max and min buttons
+            // Configure properties to remove form icon/x button, or show x button in the top right
             newChildForm.StartPosition = FormStartPosition.CenterScreen;
             newChildForm.Show();
         }
