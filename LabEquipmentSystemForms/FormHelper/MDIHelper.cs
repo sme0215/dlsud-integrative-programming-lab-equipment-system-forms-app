@@ -24,12 +24,7 @@ namespace LabEquipmentSystemForms.FormHelper
                 }
             }
 
-            // If the form is not open, set it as a child of the parent form and show it
-            newChildForm.MdiParent = parentForm;
-            newChildForm.WindowState = FormWindowState.Maximized;
-            // Configure properties to disable max and min buttons
-            // Configure properties to remove form icon/x button, or show x button in the top right
-            newChildForm.StartPosition = FormStartPosition.CenterScreen;
+            SetChildFormProperties(newChildForm, parentForm);
             newChildForm.Show();
         }
 
@@ -37,8 +32,23 @@ namespace LabEquipmentSystemForms.FormHelper
         {
             foreach (Form childForm in parentForm.MdiChildren)
             {
-                childForm.Close();
+                childForm.Dispose();
             }
+        }
+
+        private static void SetChildFormProperties(Form childForm, Form parentForm)
+        {
+            childForm.MdiParent = parentForm;
+
+            childForm.WindowState = FormWindowState.Maximized;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
+
+            childForm.ControlBox = false;
+            childForm.MaximizeBox = false;
+            childForm.MinimizeBox = false;
+
+            childForm.ShowIcon = false;
+            childForm.ShowInTaskbar = false;
         }
     }
 }

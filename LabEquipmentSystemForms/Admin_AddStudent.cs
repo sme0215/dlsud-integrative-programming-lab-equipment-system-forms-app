@@ -38,13 +38,13 @@ namespace LabEquipmentSystemForms
 
             if (!string.IsNullOrEmpty(selectedImagePath))
             {
-                imageBytes = File.ReadAllBytes(selectedImagePath); // ✅ convert image to bytes
+                imageBytes = File.ReadAllBytes(selectedImagePath);
             }
 
             bool success = DataAccess.AddStudent(
                 txtStudentId.Text.Trim(),
                 txtPassword.Text.Trim(),
-                imageBytes, // ✅ now accepts byte[]
+                imageBytes,
                 txtFirstName.Text.Trim(),
                 txtLastName.Text.Trim(),
                 cbGender.Text.Trim(),
