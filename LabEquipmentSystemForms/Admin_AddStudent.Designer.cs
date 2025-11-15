@@ -244,6 +244,7 @@
             this.pbProfilePicture.Name = "pbProfilePicture";
             this.tableLayoutPanel1.SetRowSpan(this.pbProfilePicture, 2);
             this.pbProfilePicture.Size = new System.Drawing.Size(215, 178);
+            this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfilePicture.TabIndex = 6;
             this.pbProfilePicture.TabStop = false;
             // 
