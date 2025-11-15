@@ -32,7 +32,7 @@ namespace LabEquipmentSystemForms.FormHelper
         {
             foreach (Form childForm in parentForm.MdiChildren)
             {
-                childForm.Close();
+                childForm.Dispose();
             }
         }
 
