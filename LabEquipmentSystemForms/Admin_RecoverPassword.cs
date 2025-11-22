@@ -12,11 +12,11 @@ using System.Xml.Linq;
 
 namespace LabEquipmentSystemForms
 {
-    public partial class Admin_RecoverPassword : Form
+    public partial class FormAdminRecoverPassword : Form
     {
         BindingSource bs = new BindingSource();
 
-        public Admin_RecoverPassword()
+        public FormAdminRecoverPassword()
         {
             InitializeComponent();
             LoadStudentRecords();

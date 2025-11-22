@@ -1,6 +1,6 @@
 ﻿namespace LabEquipmentSystemForms
 {
-    partial class Admin_RecoverPassword
+    partial class FormAdminRecoverPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -178,14 +178,14 @@
             this.dataGridView.TabIndex = 9;
             this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
-            // Admin_RecoverPassword
+            // FormAdminRecoverPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 457);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Admin_RecoverPassword";
+            this.Name = "FormAdminRecoverPassword";
             this.Text = "Admin_RecoverPassword";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

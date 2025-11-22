@@ -33,6 +33,11 @@ namespace LabEquipmentSystemForms
             FormAdminViewRecords formAdminViewRecords = new FormAdminViewRecords("Students");
             FormHelper.MDIHelper.LoadChildForm(formAdminViewRecords, this);
         }
+        private void passwordRecoveryMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdminRecoverPassword formAdminRecoverPassword = new FormAdminRecoverPassword();
+            FormHelper.MDIHelper.LoadChildForm(formAdminRecoverPassword, this);
+        }
 
         private void addNewEquipmentMenuItem_Click(object sender, EventArgs e)
         {
@@ -82,5 +87,6 @@ namespace LabEquipmentSystemForms
                 MessageBox.Show("Logout cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
     }
 }
