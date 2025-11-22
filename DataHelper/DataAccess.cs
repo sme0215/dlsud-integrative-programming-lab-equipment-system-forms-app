@@ -310,7 +310,7 @@ namespace DataHelper
             return success;
         }
 
-        public static bool ReturnEquipment(string requestID, string studentID, DateTime dateTimeReturned)
+        public static bool ReturnEquipment(string requestID, string studentID, DateTime dateTimeReturned, int returnAmount)
         {
             bool success = false;
             using (SqlConnection sqlCon = new SqlConnection(conStr))
@@ -321,6 +321,7 @@ namespace DataHelper
                 returnEquipmentCmd.Parameters.AddWithValue("@RequestID", requestID);
                 returnEquipmentCmd.Parameters.AddWithValue("@StudentID", studentID);
                 returnEquipmentCmd.Parameters.AddWithValue("@DateTimeReturned", dateTimeReturned);
+                returnEquipmentCmd.Parameters.AddWithValue("@ReturnAmount", returnAmount);
                 int rowsAffected = returnEquipmentCmd.ExecuteNonQuery();
                 success = rowsAffected > 0;
             }
