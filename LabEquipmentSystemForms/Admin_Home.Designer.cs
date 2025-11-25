@@ -43,8 +43,9 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.welcomeMessageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.logoutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.passwordRecoveryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             this.transactionsMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 24);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(90, 533);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 533);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,9 +67,10 @@
             // 
             this.studentMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewStudentMenuItem,
-            this.viewStudentsMenuItem});
+            this.viewStudentsMenuItem,
+            this.passwordRecoveryMenuItem});
             this.studentMenuItem.Name = "studentMenuItem";
-            this.studentMenuItem.Size = new System.Drawing.Size(77, 19);
+            this.studentMenuItem.Size = new System.Drawing.Size(113, 19);
             this.studentMenuItem.Text = "Student";
             // 
             // addNewStudentMenuItem
@@ -92,7 +94,7 @@
             this.viewEquipmentMenuItem,
             this.editEquipmentMenuItem});
             this.equipmentMenuItem.Name = "equipmentMenuItem";
-            this.equipmentMenuItem.Size = new System.Drawing.Size(77, 19);
+            this.equipmentMenuItem.Size = new System.Drawing.Size(113, 19);
             this.equipmentMenuItem.Text = "Equipment";
             // 
             // addNewEquipmentMenuItem
@@ -122,7 +124,7 @@
             this.processRequestsMenuItem,
             this.viewTransactionsMenuItem});
             this.transactionsMenuItem.Name = "transactionsMenuItem";
-            this.transactionsMenuItem.Size = new System.Drawing.Size(77, 19);
+            this.transactionsMenuItem.Size = new System.Drawing.Size(113, 19);
             this.transactionsMenuItem.Text = "Transactions";
             // 
             // processRequestsMenuItem
@@ -163,12 +165,6 @@
             this.timeMenuItem.Size = new System.Drawing.Size(51, 20);
             this.timeMenuItem.Text = "[time]";
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // logoutMenuItem
             // 
             this.logoutMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -179,6 +175,19 @@
             this.logoutMenuItem.Size = new System.Drawing.Size(68, 20);
             this.logoutMenuItem.Text = "LOGOUT";
             this.logoutMenuItem.Click += new System.EventHandler(this.logoutMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // passwordRecoveryMenuItem
+            // 
+            this.passwordRecoveryMenuItem.Name = "passwordRecoveryMenuItem";
+            this.passwordRecoveryMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.passwordRecoveryMenuItem.Text = "Password Recovery";
+            this.passwordRecoveryMenuItem.Click += new System.EventHandler(this.passwordRecoveryMenuItem_Click);
             // 
             // FormAdminHome
             // 
@@ -220,5 +229,6 @@
         private System.Windows.Forms.ToolStripMenuItem timeMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem logoutMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem passwordRecoveryMenuItem;
     }
 }
