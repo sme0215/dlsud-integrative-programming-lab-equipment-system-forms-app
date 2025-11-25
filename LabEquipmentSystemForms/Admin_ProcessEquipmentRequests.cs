@@ -26,8 +26,9 @@ namespace LabEquipmentSystemForms
             if (dataGridView.CurrentRow == null) return;
 
             string requestID = dataGridView.CurrentRow.Cells["RequestID"].Value.ToString();
-
-            bool success = DataAccess.ApproveEquipmentRequest(requestID, adminID);
+            string action = "approve";
+            DateTime processDate = DateTime.Now;
+            bool success = DataAccess.ProcessRequest(requestID, adminID, action, processDate);
 
             if (success)
             {
@@ -45,8 +46,9 @@ namespace LabEquipmentSystemForms
             if (dataGridView.CurrentRow == null) return;
 
             string requestID = dataGridView.CurrentRow.Cells["RequestID"].Value.ToString();
-
-            bool success = DataAccess.DenyEquipmentRequest(requestID, adminID);
+            string action = "deny";
+            DateTime processDate = DateTime.Now;
+            bool success = DataAccess.ProcessRequest(requestID, adminID, action, processDate);
 
             if (success)
             {

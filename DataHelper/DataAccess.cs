@@ -185,33 +185,19 @@ namespace DataHelper
         }
 
         // Requests
-        public static bool ApproveEquipmentRequest(string requestID, string adminID)
+        public static bool ProcessRequest(string requestID, string adminID, string action, DateTime processDate)
         {
             bool success = false;
             using (SqlConnection sqlCon = new SqlConnection(conStr))
             {
                 sqlCon.Open();
-                SqlCommand approveRequestCmd = new SqlCommand("Admin_ApproveEquipmentRequest", sqlCon);
-                approveRequestCmd.CommandType = CommandType.StoredProcedure;
-                approveRequestCmd.Parameters.AddWithValue("@RequestID", requestID);
-                approveRequestCmd.Parameters.AddWithValue("@AdminID", adminID);
-                int rowsAffected = approveRequestCmd.ExecuteNonQuery();
-                success = rowsAffected > 0;
-            }
-            return success;
-        }
-
-        public static bool DenyEquipmentRequest(string requestID, string adminID)
-        {
-            bool success = false;
-            using (SqlConnection sqlCon = new SqlConnection(conStr))
-            {
-                sqlCon.Open();
-                SqlCommand denyRequestCmd = new SqlCommand("Admin_DenyEquipmentRequest", sqlCon);
-                denyRequestCmd.CommandType = CommandType.StoredProcedure;
-                denyRequestCmd.Parameters.AddWithValue("@RequestID", requestID);
-                denyRequestCmd.Parameters.AddWithValue("@AdminID", adminID);
-                int rowsAffected = denyRequestCmd.ExecuteNonQuery();
+                SqlCommand processRequestCmd = new SqlCommand("Admin_ProcessRequest", sqlCon);
+                processRequestCmd.CommandType = CommandType.StoredProcedure;
+                processRequestCmd.Parameters.AddWithValue("@RequestID", requestID);
+                processRequestCmd.Parameters.AddWithValue("@HandledBy", adminID);
+                processRequestCmd.Parameters.AddWithValue("@Action", action);
+                processRequestCmd.Parameters.AddWithValue("@ProcessDate", processDate);
+                int rowsAffected = processRequestCmd.ExecuteNonQuery();
                 success = rowsAffected > 0;
             }
             return success;
