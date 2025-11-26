@@ -24,6 +24,13 @@ namespace LabEquipmentSystemForms
         private void btnApprove_Click(object sender, EventArgs e)
         {
             if (dataGridView.CurrentRow == null) return;
+            // Get status from selected row
+            string status = dataGridView.CurrentRow.Cells["Status"].Value.ToString();
+            if (status.ToLower().Equals("completed")) // If completed, return
+            {
+                MessageBox.Show("Cannot approve a completed request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             string requestID = dataGridView.CurrentRow.Cells["RequestID"].Value.ToString();
             string action = "approve";
@@ -44,6 +51,14 @@ namespace LabEquipmentSystemForms
         private void btnDeny_Click(object sender, EventArgs e)
         {
             if (dataGridView.CurrentRow == null) return;
+
+            // Get status from selected row
+            string status = dataGridView.CurrentRow.Cells["Status"].Value.ToString();
+            if (status.ToLower().Equals("completed")) // If completed, return
+            {
+                MessageBox.Show("Cannot deny a completed request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             string requestID = dataGridView.CurrentRow.Cells["RequestID"].Value.ToString();
             string action = "deny";
